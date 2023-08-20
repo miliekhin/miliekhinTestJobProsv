@@ -1,0 +1,17 @@
+:root {
+  --black: #181818;
+  --grey1: #a5a5a4;
+}
+
+body {
+  background: #f4f5f4;
+  min-height: 100vh;
+  color: var(--black);
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
