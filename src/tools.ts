@@ -1,5 +1,5 @@
 import events from '@/assets/events.json';
-import type { Event } from '@/types';
+import type {Event, EventDescription} from '@/types';
 
 export function useWeekDays(indt: Date): string[] {
     const dt = new Date(indt);
@@ -28,9 +28,9 @@ export function useISOStringWithTimezone(date: Date): string {
         ':' + pad(tzOffset % 60);
 }
 
-const dayEvents = (date: string): string[] => {
+const dayEvents = (date: string): EventDescription[] => {
     return events.filter((ev) => ev.date === date).map((ev) => {
-        return {event: ev.event, descr: ev.description}
+        return { event: ev.event, descr: ev.description };
     });
 };
 

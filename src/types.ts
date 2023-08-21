@@ -1,6 +1,9 @@
+export type EventDescription = {
+    event: string,
+    descr: string,
+}
+
 export type Event = {
     date: string,
-    description: string,
-    events: string[],
-    show: boolean,
+    events: EventDescription[],
 }

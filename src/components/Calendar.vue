@@ -3,7 +3,7 @@
   import type { Ref } from 'vue'
   import Day from '@/components/Day.vue';
   import MonthSwitcher from '@/components/MonthSwitcher.vue';
-  import type { Event } from '@/types';
+  import type { Event, EventDescription } from '@/types';
   import {
     useWeekDays,
     useISOStringWithTimezone,
@@ -36,10 +36,10 @@
     dt.setMonth(dt.getMonth() + (isNext ? 1 : -1));
     now.value = dt;
   };
-  const selectedEvent = ref('')
-  const showEvent = (event) => {
+  const selectedEvent = ref('');
+  const showEvent = (event: EventDescription): undefined => {
       selectedEvent.value = event.descr;
-  }
+  };
 </script>
 
 <template>

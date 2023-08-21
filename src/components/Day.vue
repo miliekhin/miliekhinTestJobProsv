@@ -34,7 +34,7 @@
     <div
       v-for="(ev, i) in props.data.events"
       :key="i"
-      :title="ev"
+      :title="ev.event"
       class="event-row"
       @click="$emit('showEvent', ev)"
     >
