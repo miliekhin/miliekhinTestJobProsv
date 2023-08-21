@@ -29,7 +29,9 @@ export function useISOStringWithTimezone(date: Date): string {
 }
 
 const dayEvents = (date: string): string[] => {
-    return events.filter((ev) => ev.date === date).map((ev) => ev.event);
+    return events.filter((ev) => ev.date === date).map((ev) => {
+        return {event: ev.event, descr: ev.description}
+    });
 };
 
 const eventObject = (date: Date): Event => {

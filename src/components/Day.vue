@@ -36,8 +36,9 @@
       :key="i"
       :title="ev"
       class="event-row"
+      @click="$emit('showEvent', ev)"
     >
-      {{ ev }}
+      {{ ev.event }}
     </div>
   </div>
 </template>

@@ -36,11 +36,23 @@
     dt.setMonth(dt.getMonth() + (isNext ? 1 : -1));
     now.value = dt;
   };
-
+  const selectedEvent = ref('')
+  const showEvent = (event) => {
+      selectedEvent.value = event.descr;
+  }
 </script>
 
 <template>
   <div class="wrap">
+    <div
+      v-if="selectedEvent"
+      class="selected-event-wrapper"
+      @click="selectedEvent = ''"
+    >
+      <div class="event-decription">
+        {{ selectedEvent }}
+      </div>
+    </div>
     <header>
       <MonthSwitcher
         :month-name="month"
@@ -63,12 +75,30 @@
           :key="c.date"
           :data="c"
           :now-date="nowString"
+          @showEvent="showEvent"
       />
     </div>
   </div>
 </template>
 
 <style scoped>
+  .selected-event-wrapper{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(24, 24, 24, 0.55);
+  }
+  .event-decription{
+    padding: 30px;
+    background: white;
+
+  }
   .wrap{
     background: white;
     border-radius: 20px;
