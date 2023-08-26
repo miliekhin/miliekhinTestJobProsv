@@ -8,7 +8,7 @@ export function useWeekDays(indt: Date): string[] {
     const monday = dt.getDate();
     const fmt = new Intl.DateTimeFormat("ru-RU", { weekday: "long"});
     for(let i = 0; i < 7; i++) {
-        dt.setDate(monday + i)
+        dt.setDate(monday + i);
         days.push(fmt.format(dt).toUpperCase());
     }
     return days;
@@ -37,7 +37,7 @@ const dayEvents = (date: string): EventDescription[] => {
 const eventObject = (date: Date): Event => {
     const [datestr] = useISOStringWithTimezone(date).split('T');
     return { date: datestr, events: dayEvents(datestr) };
-}
+};
 
 export function usePrevDays(indt: Date): Event[] {
     const dt = new Date(indt);

@@ -12,7 +12,7 @@
     data: Event,
     nowDate: string,
   }
-  const props = defineProps<Props>()
+  const props = defineProps<Props>();
   const dt: Date = new Date(props.data.date);
   const now: Date = new Date(props.nowDate);
   const classWeekEnd = computed<Boolean>(() => {

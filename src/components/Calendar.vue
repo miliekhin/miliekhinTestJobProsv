@@ -1,6 +1,6 @@
 <script setup lang='ts'>
   import { computed, ref } from 'vue';
-  import type { Ref } from 'vue'
+  import type { Ref } from 'vue';
   import Day from '@/components/Day.vue';
   import MonthSwitcher from '@/components/MonthSwitcher.vue';
   import type { Event, EventDescription } from '@/types';
@@ -28,7 +28,7 @@
     const prevMonthCal = usePrevDays(now.value);
     const currentMonthCal = useCurrentDays(now.value);
     const nextMonthCal = useNextDays(now.value, (cellsCount - prevMonthCal.length - currentMonthCal.length) );
-    return prevMonthCal.concat(currentMonthCal, nextMonthCal)
+    return prevMonthCal.concat(currentMonthCal, nextMonthCal);
   } );
 
   const switchMonth = (isNext: Boolean): void => {
