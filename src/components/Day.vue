@@ -1,7 +1,12 @@
 <script setup lang='ts'>
   import { computed } from 'vue';
   import type { Event } from '@/types';
+  import type { EventDescription } from '@/types';
   import { useISOStringWithTimezone } from '@/tools';
+
+  const emit = defineEmits<{
+    (e: 'showEvent', evt: EventDescription): void
+  }>();
 
   interface Props {
     data: Event,
@@ -36,7 +41,7 @@
       :key="i"
       :title="ev.event"
       class="event-row"
-      @click="$emit('showEvent', ev)"
+      @click="emit('showEvent', ev)"
     >
       {{ ev.event }}
     </div>

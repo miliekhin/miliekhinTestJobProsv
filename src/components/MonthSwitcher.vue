@@ -2,7 +2,7 @@
   interface Props {
     monthName: string,
   }
-  const props = withDefaults(defineProps<Props>(), {
+  withDefaults(defineProps<Props>(), {
     monthName: 'Месяц',
   });
   defineEmits(['prev-month', 'next-month']);
