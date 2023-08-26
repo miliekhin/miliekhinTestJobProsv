@@ -75,7 +75,7 @@
           :key="c.date"
           :data="c"
           :now-date="nowString"
-          @showEvent="showEvent"
+          @show-event="showEvent"
       />
     </div>
   </div>
